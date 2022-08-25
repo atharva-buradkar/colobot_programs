@@ -1,0 +1,15 @@
+extern void object::New()
+{
+	object titanium = radar(Titanium);
+	goto( titanium.position);
+	build(Converter);
+	move(-5);
+	
+	wait(40);
+	titanium = radar(Titanium);
+	goto( titanium.position);
+	build(BotFactory);
+	
+	move(-5);
+	
+}

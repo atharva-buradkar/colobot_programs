@@ -1,0 +1,17 @@
+extern void object::Recharger()
+{
+	
+	object powercell = radar(PowerCell);
+	
+	goto(powercell.position);
+	
+	grab();
+	
+	
+	
+	object powerstation = radar(PowerStation);
+	
+	goto(powerstation.position);
+	
+	
+}

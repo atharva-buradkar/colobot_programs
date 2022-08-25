@@ -1,0 +1,23 @@
+extern void object::Black_Box_Retriever()
+{
+	object box = radar(BlueFlag);
+	
+	goto(box.position);
+	
+	
+	
+	box = radar(Titanium);
+	
+	goto(box.position);
+	
+	build(ExchangePost);
+	
+	//send("", 0, 1000);
+	
+	//box = radar(SpaceShip);
+	
+	//goto(box.position);
+	
+	
+	
+}

@@ -1,0 +1,13 @@
+extern void object::Place_Derrick()
+{
+	object item = radar(Titanium);
+	goto(item.position);
+	grab();
+	
+	
+	item = radar(TitaniumSpot);
+	goto(item.position);
+	drop();
+	
+	
+}

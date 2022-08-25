@@ -1,0 +1,21 @@
+extern void object::Place_Titanium()
+{
+	float buildingrad = 7.5;
+	object Ship = radar(SpaceShip);
+	
+	object item = radar(Titanium);
+	goto(item.position);
+	grab();
+	
+	point near_space_ship = Ship.position;
+	
+	near_space_ship.x = near_space_ship.x + 20;
+	
+	point flat = flatspace(near_space_ship, buildingrad, 0, 100, buildingrad);
+	
+	goto(flat);
+	
+	drop();
+	
+	move(-buildingrad);
+}

@@ -1,0 +1,12 @@
+extern void object::New()
+{
+	
+	float initialpower = energyCell.energyLevel;
+	
+	move(50);
+	
+	float finalpower = energyCell.energyLevel;
+	
+	message("" + (initialpower-finalpower));
+	
+}

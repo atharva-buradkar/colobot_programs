@@ -1,0 +1,37 @@
+extern void object::Place_Titanium()
+{
+	// Auto Lab = 6
+	// Bot Factory = 7.5
+	// Converter = 6
+	// Defense Tower = 3.5
+	// Derrick = 2.5
+	// Info. EP = 2.5
+	// Nuclear Plant = 10
+	// Power Captor = 10
+	// Power Plant = 4
+	// Power Station = 6
+	// Radar Station = 2.5
+	// Repair Center = 6
+	// Reserach Center = 5
+	
+	
+	
+	float buildingrad = 6;
+	object Ship = radar(SpaceShip);
+	
+	object item = radar(Titanium);
+	goto(item.position);
+	grab();
+	
+	point near_space_ship = Ship.position;
+	
+	near_space_ship.x = near_space_ship.x + 20;
+	
+	point flat = flatspace(near_space_ship, buildingrad, 0, 100, buildingrad);
+	
+	goto(flat);
+	
+	drop();
+	
+	move(-buildingrad);
+}

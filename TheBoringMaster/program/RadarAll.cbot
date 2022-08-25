@@ -1,0 +1,48 @@
+extern void object::Find_All()
+{
+	message("Ants " + sizeof(radarall(AlienAnt)));
+	wait(2);
+	message("Wasps " + sizeof(radarall(AlienWasp)));
+	wait(2);
+	message("Worms " + sizeof(radarall(AlienWorm)));
+	wait(2);
+	message("Spiders " + sizeof(radarall(AlienSpider)));
+	wait(2);
+	message("U Ore " + sizeof(radarall(UraniumOre)));
+	wait(2);
+	message("T Ore " + sizeof(radarall(TitaniumOre)));
+	wait(2);
+	message("Titanium " + sizeof(radarall(Titanium)));
+	wait(2);
+	message("U Cell " + sizeof(radarall(NuclearCell)));
+	wait(2);
+	message("P Cell " + sizeof(radarall(PowerCell)));
+	wait(2);
+	message("Derelict Bots " + sizeof(radarall(Wreck)));
+	wait(2);
+	message("OrgaMatter " + sizeof(radarall(OrgaMatter)));
+	wait(2);
+	message("Titanium Crystal " + sizeof(radarall(Crystal)));
+	wait(2);
+	message("Uranium Mushroom " + sizeof(radarall(BrownMushroom)));
+	wait(2);
+	message("Poisonous Mushroom " + sizeof(radarall(GreenMushroom)));
+	wait(2);
+	message("Gravi Plant " + sizeof(radarall(GraviPlant)));
+	wait(2);
+	message("Bush " + sizeof(radarall(Bush)));
+	wait(2);
+	message("Blue Flag " + sizeof(radarall(BlueFlag)));
+	wait(2);
+	message("Red Flag " + sizeof(radarall(RedFlag)));
+	wait(2);
+	
+	message("Green Flag " + sizeof(radarall(GreenFlag)));
+	wait(2);
+	
+	message("Yellow Flag " + sizeof(radarall(YellowFlag)));
+	wait(2);
+	
+	message("Violet Flag " + sizeof(radarall(VioletFlag)));
+	wait(2);
+}

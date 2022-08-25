@@ -1,0 +1,44 @@
+extern void object::Worm_Shooter()
+{
+	
+	aim(-20);
+	
+	object item;
+	
+	while(true)
+	{
+		object worm = radar(AlienWorm);
+		if(worm == null) // must be underground or all worms are dead
+		{
+			wait(12); // wait for them to reappear
+			worm = radar(AlienWorm);
+			
+			if(worm == null) // all worms are dead
+			{
+				break;
+			}
+		}
+		else // found a worm
+		{
+			while (radar(AlienWorm, 0, 360, 0, 20) == null)
+			{
+				item = radar(AlienWorm);
+				turn(direction(item.position));
+				motor(1,1);
+				jet(0);
+				if(position.z-topo(position) < 6)
+				{
+					jet(1);
+				}
+				if(position.z-topo(position) > 9 && topo(position) > 2)
+				{
+					jet(-1);
+				}
+				wait(0.2);
+			}
+			fire(1);
+		}
+	}
+	
+	
+}

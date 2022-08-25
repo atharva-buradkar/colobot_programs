@@ -1,0 +1,35 @@
+extern void object::Dragster()
+{
+	
+	object pad = radar(GoalArea);
+	
+	motor(1, 1);
+	while(distance(pad.position, position) > 2)
+	{
+		wait(0.01);
+		
+	}
+	
+	motor(0.75, 0.75);
+	while(distance(pad.position, position) > 1.5)
+	{
+		wait(0.01);
+		
+	}
+	
+	motor(0.5, 0.5);
+	while(distance(pad.position, position) > 1)
+	{
+		wait(0.01);
+		
+	}
+	
+	motor(0.25, 0.25);
+	while(distance(pad.position, position) > 0.5)
+	{
+		wait(0.01);
+		
+	}
+	
+	motor(0, 0);
+}

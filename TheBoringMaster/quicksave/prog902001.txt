@@ -1,0 +1,38 @@
+extern void object::SAW_Shooter()
+{
+	aim(-20);
+	
+	object    item;
+	
+	while (true)
+	{
+		while (radar(AlienAnt, 0, 360, 0, 20) == null)
+		{
+			item = radar(AlienAnt);
+			turn(direction(item.position));
+			motor(1,1);
+			jet(0);
+			if(position.z-topo(position) < 6)
+			{
+				jet(1);
+			}
+			if(position.z-topo(position) > 9)
+			{
+				jet(-1);
+			}
+			wait(0.2);
+		}
+		fire(1);
+		
+		
+		object power = radar(PowerStation);
+		
+		goto(power.position);
+		
+		while ( energyCell.energyLevel < 1 )
+		{
+			wait(0.1);           
+		}
+	}
+	
+}

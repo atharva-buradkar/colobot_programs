@@ -1,0 +1,77 @@
+extern void object::Black_Box_Retriever()
+{
+	
+	for(int key_num = 0; key_num< 4; key_num ++)
+	{
+		
+		if(key_num == 0)
+		{
+			
+			object box = radar(KeyA);
+			
+			goto(box.position);
+			
+			grab();
+			
+			
+			object spaceShip = radar(Vault);
+			
+			goto(spaceShip.position);
+			
+			drop();
+		}
+		
+		if(key_num == 1)
+		{
+			
+			object box = radar(KeyB);
+			
+			goto(box.position);
+			
+			grab();
+			
+			
+			object spaceShip = radar(Vault);
+			
+			goto(spaceShip.position);
+			
+			drop();
+		}
+		
+		if(key_num == 2)
+		{
+			
+			object box = radar(KeyC);
+			
+			goto(box.position);
+			
+			grab();
+			
+			
+			object spaceShip = radar(Vault);
+			
+			goto(spaceShip.position);
+			
+			drop();
+		}
+		
+		if(key_num == 3)
+		{
+			
+			object box = radar(KeyD);
+			
+			goto(box.position);
+			
+			grab();
+			
+			
+			object spaceShip = radar(Vault);
+			
+			goto(spaceShip.position);
+			
+			drop();
+		}
+		
+	}
+	
+}

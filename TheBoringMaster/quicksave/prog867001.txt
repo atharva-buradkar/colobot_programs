@@ -1,0 +1,17 @@
+extern void object::Find_All()
+{
+	message("Ants " + sizeof(radarall(AlienAnt)));
+	wait(2);
+	message("Spiders " + sizeof(radarall(AlienSpider)));
+	wait(2);
+	message("U Ore " + sizeof(radarall(UraniumOre)));
+	wait(2);
+	message("T Ore " + sizeof(radarall(TitaniumOre)));
+	wait(2);
+	message("Titanium " + sizeof(radarall(Titanium)));
+	wait(2);
+	message("U Cell " + sizeof(radarall(NuclearCell)));
+	wait(2);
+	message("T Cell " + sizeof(radarall(PowerCell)));
+	wait(2);
+}

@@ -1,0 +1,6 @@
+extern void object::Compass()
+{
+	object item = radar(UraniumOre);
+	turn(direction(item.position));
+	
+}

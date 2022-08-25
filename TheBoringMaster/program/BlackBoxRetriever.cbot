@@ -1,0 +1,17 @@
+extern void object::Black_Box_Retriever()
+{
+	object box = radar(BlackBox);
+	
+	goto(box.position);
+	
+	grab();
+	
+	
+	object spaceShip = radar(SpaceShip);
+	
+	goto(spaceShip.position);
+	
+	drop();
+	
+	takeoff();
+}

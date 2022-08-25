@@ -1,0 +1,17 @@
+extern void object::New()
+{
+	aim(-20);
+	
+	while(true)
+	{
+		
+		
+		
+		object[] shooters = radarall(WingedShooter);
+		
+		for( int i = 0; i < sizeof(shooters); i++ )
+		{
+			message(""+shooters[i].position);
+		}
+	}
+}

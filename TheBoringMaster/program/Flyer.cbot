@@ -1,0 +1,40 @@
+extern void object::Flyer()
+{
+	float motor_speed = 0.75;
+	
+	float jet_power = 0.25;
+	
+	object next_waypoint = radar(Target2);
+	
+	while( next_waypoint != null )
+	{
+		// keep on turnig to the waypoint
+		float dir = direction(next_waypoint.position);
+		if( dir < 0 ) // right side
+		{
+			motor(motor_speed, motor_speed+dir/90);
+		}
+		else // left side
+		{
+			motor(motor_speed-dir/90, motor_speed);
+		}
+		
+		// match height of waypoint
+		if(position.z < next_waypoint.position.z) // bot below waypoint
+		{
+			jet(jet_power);
+		}
+		else if(position.z > next_waypoint.position.z) // bot above waypoint
+		{
+			jet(-jet_power);
+		}
+		
+		next_waypoint = radar(Target2);
+		
+	}
+	message("<!done with flying!>");
+	
+	object ship = radar(SpaceShip);
+	
+	goto(ship.position);
+}

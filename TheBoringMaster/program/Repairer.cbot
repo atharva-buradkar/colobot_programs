@@ -1,0 +1,5 @@
+extern void object::Repairer()
+{
+	object Repairer = radar(RepairCenter);
+	goto(Repairer.position);
+}

@@ -1,0 +1,17 @@
+extern void object::Bot_Maker()
+{
+	
+	object item = radar(Titanium);
+	 goto(item.position);
+	 grab();
+	
+	
+	object Botfactory = radar(BotFactory);
+	 goto(Botfactory.position);
+	 drop();
+	
+	move(-3);
+	
+	
+	factory(TrackedShooter);
+}

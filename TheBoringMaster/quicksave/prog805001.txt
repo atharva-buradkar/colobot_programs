@@ -1,0 +1,15 @@
+extern void object::Black_Box_Retriever()
+{
+	object box = radar(BrownMushroom);
+	
+	goto(box.position);
+	
+	grab();
+	
+	
+	object spaceShip = radar(SpaceShip);
+	
+	goto(spaceShip.position);
+	
+	drop();
+}

@@ -1,0 +1,11 @@
+extern void object::Recyclerer()
+{
+	
+	object derelict = radar(Wreck);
+	
+	goto(derelict.position);
+	
+	recycle();
+	
+	
+}

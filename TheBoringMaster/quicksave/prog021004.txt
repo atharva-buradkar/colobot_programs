@@ -1,0 +1,15 @@
+extern void object::Black_Box_Retriever()
+{
+	object box = radar(OrgaMatter);
+	
+	goto(box.position);
+	
+	grab();
+	
+	
+	object spaceShip = radar(AutoLab);
+	
+	goto(spaceShip.position);
+	
+	drop();
+}

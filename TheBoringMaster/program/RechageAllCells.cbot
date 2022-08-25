@@ -1,0 +1,39 @@
+extern void object::RechargeAllCells()
+{
+	object powerstation = radar(PowerStation);
+	
+	if(powerstation == null)
+	{
+		message("No power station foumd.");
+		return;
+	}
+	
+	object[] powercells = radarall(PowerCell);
+	
+	message( "" + sizeof(powercells) + "Power cells found." );
+	
+	for( int i = 0; i < sizeof(powercells); i++ )
+	{
+		wait(2);
+		
+		message("Power cell located at " + powercells[i].position);
+		
+		if(powercells[i].energyLevel < 1)
+		{
+			goto(powercells[i].position);
+			
+			grab();
+			
+			goto(powerstation.position);
+			while( powercells[i].energyLevel < 1 || energyCell.energyLevel < 1 )
+			{
+				wait(1);
+			}
+			
+			goto(space(position));    // go to free space
+			drop();
+		}
+		
+		
+	}
+}

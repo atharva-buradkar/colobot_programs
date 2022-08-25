@@ -1,0 +1,48 @@
+extern void object::Bot_Maker()
+{
+	object item = radar(Titanium);
+	 goto(item.position);
+	 grab();
+	
+	
+	object Botfactory = radar(BotFactory);
+	 goto(Botfactory.position);
+	 drop();
+	
+	move(-3);
+	
+	
+	factory(TrackedBuilder);
+	
+	Place_Bot_Power_Cell();
+}
+extern void object::Place_Bot_Power_Cell()
+{
+	point pos = position; // save position of bot
+	
+	object powerCell = radar(PowerCell);
+	
+	goto(powerCell.position);
+	
+	grab();
+	
+	goto(pos); // go back to the position you saved
+	
+	object Bot = radar(TrackedBuilder);
+	
+	do
+	{
+		wait(0.2);
+	}while(radar(TrackedBuilder, 0, 90, 0, 30) == null);
+	
+	turn(direction(Bot.position));
+	
+	move(3); // and place power cell
+	
+	drop();
+	
+	move(-3);
+	
+	
+	
+}

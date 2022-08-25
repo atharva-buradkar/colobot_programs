@@ -1,0 +1,27 @@
+extern void object::Wreck_Explorer()
+{
+	
+	object[] derelicts = radarall(Wreck, 0, 360, 0, 1000, -1);
+	
+	for(int i = 0; i < sizeof(derelicts); i++)
+	{
+		message("Will travel " + distance(position, derelicts[i].position));
+		
+		while(distance(position, derelicts[i].position) > 5)
+		{
+			float dir = direction(derelicts[i].position);
+			
+			if(dir < 0)
+			{
+				motor(1, 1+dir/90); // turning right
+			}
+			else // dir > 0
+			{
+				motor(1-dir/90, 1); // turning left
+			}
+		}
+	}
+	
+	
+	
+}

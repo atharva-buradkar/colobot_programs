@@ -1,0 +1,15 @@
+extern void object::Compass()
+{
+	object item = radar(AlienAnt);
+	if(item == null)
+	{
+		object spider = radar(AlienSpider);
+		turn(direction(spider.position));
+		if(spider == null)
+		{
+			return;
+		}
+	}
+	turn(direction(item.position));
+	
+}

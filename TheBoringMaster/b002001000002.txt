@@ -1,0 +1,126 @@
+extern void object::Bot_Maker()
+{
+	// wheeled, tracked, winged, legged
+	// 1-4 grabbers
+	// 5-8 sniffers
+	// 9-12 shooters
+	// 13-16 orga shooters
+	// 17-20 builders
+	
+	// heavy tracked
+	// 21 thumper
+	// 22 phazer shooter
+	// 23 recycler
+	// 24 shielder
+	
+	// amphibious
+	// 25 subber
+	
+	int bot_num = 25; // select from above
+	
+	object item = radar(Titanium);
+	 goto(item.position);
+	 grab();
+	
+	
+	object Botfactory = radar(BotFactory);
+	 goto(Botfactory.position);
+	 drop();
+	
+	move(-3);
+	
+	
+	if(bot_num == 1) factory(WheeledGrabber);
+	if(bot_num == 2) factory(TrackedGrabber);
+	if(bot_num == 3) factory(WingedGrabber);
+	if(bot_num == 4) factory(LeggedGrabber);
+	
+	if(bot_num == 5) factory(WheeledSniffer);
+	if(bot_num == 6) factory(TrackedSniffer);
+	if(bot_num == 7) factory(WingedSniffer);
+	if(bot_num == 8) factory(LeggedSniffer);
+	
+	if(bot_num == 9) factory(WheeledShooter);
+	if(bot_num == 10) factory(TrackedShooter);
+	if(bot_num == 11) factory(WingedShooter);
+	if(bot_num == 12) factory(LeggedShooter);
+	
+	if(bot_num == 13) factory(WheeledOrgaShooter);
+	if(bot_num == 14) factory(TrackedOrgaShooter);
+	if(bot_num == 15) factory(WingedOrgaShooter);
+	if(bot_num == 16) factory(LeggedOrgaShooter);
+	
+	if(bot_num == 17) factory(WheeledBuilder);
+	if(bot_num == 18) factory(TrackedBuilder);
+	if(bot_num == 19) factory(WingedBuilder);
+	if(bot_num == 20) factory(LeggedBuilder);
+	
+	if(bot_num == 21) factory(Thumper);
+	if(bot_num == 22) factory(PhazerShooter);
+	if(bot_num == 23) factory(Recycler);
+	if(bot_num == 24) factory(Shielder);
+	
+	if(bot_num == 25) factory(Subber);
+	
+	Place_Bot_Power_Cell( bot_num );
+}
+
+extern void object::Place_Bot_Power_Cell(int bot_num)
+{
+	point pos = position; // save position of bot
+	
+	object powerCell = radar(PowerCell);
+	
+	goto(powerCell.position);
+	
+	grab();
+	
+	goto(pos); // go back to the position you saved
+	
+	object Bot;
+	
+	if(bot_num == 1) Bot = radar(WheeledGrabber);
+	if(bot_num == 2) Bot = radar(TrackedGrabber);
+	if(bot_num == 3) Bot = radar(WingedGrabber);
+	if(bot_num == 4) Bot = radar(LeggedGrabber);
+	
+	if(bot_num == 5) Bot = radar(WheeledSniffer);
+	if(bot_num == 6) Bot = radar(TrackedSniffer);
+	if(bot_num == 7) Bot = radar(WingedSniffer);
+	if(bot_num == 8) Bot = radar(LeggedSniffer);
+	
+	if(bot_num == 9) Bot = radar(WheeledShooter);
+	if(bot_num == 10) Bot = radar(TrackedShooter);
+	if(bot_num == 11) Bot = radar(WingedShooter);
+	if(bot_num == 12) Bot = radar(LeggedShooter);
+	
+	if(bot_num == 13) Bot = radar(WheeledOrgaShooter);
+	if(bot_num == 14) Bot = radar(TrackedOrgaShooter);
+	if(bot_num == 15) Bot = radar(WingedOrgaShooter);
+	if(bot_num == 16) Bot = radar(LeggedOrgaShooter);
+	
+	if(bot_num == 17) Bot = radar(WheeledBuilder);
+	if(bot_num == 18) Bot = radar(TrackedBuilder);
+	if(bot_num == 19) Bot = radar(WingedBuilder);
+	if(bot_num == 20) Bot = radar(LeggedBuilder);
+	
+	if(bot_num == 21) Bot = radar(Thumper);
+	if(bot_num == 22) Bot = radar(PhazerShooter);
+	if(bot_num == 23) Bot = radar(Recycler);
+	if(bot_num == 24) Bot = radar(Shielder);
+	
+	if(bot_num == 25) Bot = radar(Subber);
+	
+	object botfactory = radar(BotFactory);
+	
+	goto(botfactory.position);
+	
+	do
+	{
+		wait(0.2);
+	}while(radar(Subber, 0, 90, 0, 30) == null);
+	
+	drop();
+	
+	goto(space(position));
+}

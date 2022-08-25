@@ -1,0 +1,17 @@
+extern void object::Motor_Test()
+{
+	pendown(Purple, 2);
+	
+	for(int i = 0; i < 4; i++)
+	{
+		move(5);
+		turn(90);
+	}
+	
+	motor(-1, 1);
+	
+	wait(1);
+	
+	
+	
+}

@@ -1,0 +1,22 @@
+extern void object::CollectTitanium()
+{
+	// 1) Variable definition.
+	object  item;            // info. about objects
+	
+	while (true)             // repeat forever
+	{
+		// 2) Go to the titanium ore and grab it.
+		item = radar(TitaniumOre,0, 360, 0, 1000, -1);// look for titanium ore
+		goto(item.position);     // go to the position
+		grab();                  // grab the titanium
+		
+		// 3) Go to the converter and drop it.
+		item = radar(SpaceShip); // look for converter
+		goto(item.position);     // go to the position
+		drop();                  // drop the titanium
+		move(-2.5);              // step back 2.5 m
+		
+		
+	}
+}
+
