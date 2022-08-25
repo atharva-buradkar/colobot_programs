@@ -1,0 +1,20 @@
+extern void object::Move()
+{
+	move(20);
+	
+	turn(90);
+	
+	move(20);
+	
+	turn(-90);
+	
+	move(20);
+	
+	turn(-90);
+	
+	move(20);
+	
+	
+	
+	
+}

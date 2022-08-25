@@ -1,0 +1,12 @@
+extern void object::remote()
+{
+	send("order", 1, 100);
+	wait(5);
+	send("order", 3, 100);
+	wait(5);
+	send("order", 2, 100);
+	wait(5);
+	send("order", 4, 100);
+	
+	
+}

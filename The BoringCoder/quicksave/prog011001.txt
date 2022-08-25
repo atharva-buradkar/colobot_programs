@@ -1,0 +1,6 @@
+extern void object::Go_to_Home()
+{
+	object ship = radar(SpaceShip);
+	goto(ship.position);
+	
+}

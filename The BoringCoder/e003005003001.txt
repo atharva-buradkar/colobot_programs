@@ -1,0 +1,14 @@
+extern void object::Info()
+{
+	while(true)
+	{
+		float dir = receive("Direction");
+		
+		float len = receive("Length");
+		
+		turn(dir);
+		
+		move(len);
+		
+	}
+}

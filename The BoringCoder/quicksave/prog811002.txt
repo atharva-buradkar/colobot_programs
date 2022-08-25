@@ -1,0 +1,26 @@
+extern void object::Sniff_2()
+{
+	goto( -30, 0 );
+	
+	point start = position;
+	
+	for( int x = start.x; x < (start.x + 2 * 5); x = x + 2 )
+	{
+		int y = start.y;
+		
+		for( ; y < (start.y + 2 * 5); y = y + 2 )
+		{
+			
+			
+			move( 2 );
+			pendown( Blue, 2 );
+		}
+		
+		point p;
+		p.x = x;
+		p.y = y;
+		goto( p );
+	}
+	
+	
+}

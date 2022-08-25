@@ -1,0 +1,16 @@
+extern void object::Move()
+{
+	for(int len = 25; len > 0; len=len-5)
+	{
+		Spiral_Part(len);
+	}
+}
+extern void object::Spiral_Part(float dist)
+{
+	for(int i = 0; i < 2; i++)
+	{
+		move(dist);
+		turn(90);
+	}
+	
+}

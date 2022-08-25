@@ -1,0 +1,10 @@
+extern void object::Build_Building()
+{
+	object Titanium_Cube = radar(Titanium);
+	
+	goto(Titanium_Cube.position);
+	
+	grab();
+	
+	
+}

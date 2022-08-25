@@ -1,0 +1,11 @@
+extern void object::Spider1()
+{
+	turn(90);
+	 int i = 0;
+	while(i < 3)
+	{
+		fire(1);
+		turn(-90);
+		i++;
+	}
+}

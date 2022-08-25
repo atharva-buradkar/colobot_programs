@@ -1,0 +1,36 @@
+extern void object::MidPlaceCaptor()
+{
+	object Titan = radar(Titanium);
+	goto(Titan.position);
+	grab();
+	
+	
+	object spaceship = radar(SpaceShip);
+	
+	object blueflag = radar(BlueFlag);
+	
+	float dist = distance(spaceship.position, blueflag.position);
+	
+	float midpoint = dist/2;
+	
+	turn(direction(blueflag.position));
+	
+	jet(1);
+	
+	wait(1);
+	
+	point flat = flatspace(midpoint, 10, 0);
+	
+	move(distance(this.position, flat));
+	
+	jet(-1);
+	
+	do
+	{
+		wait(0.5);
+	}
+	while( this.position.z - topo(this.position) > 1);
+	
+	drop();
+	
+}

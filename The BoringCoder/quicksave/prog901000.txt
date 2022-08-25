@@ -1,0 +1,13 @@
+extern void object::Place_Titanium()
+{
+	
+	object item = radar(BlueFlag);
+	 goto(item.position);
+	 
+	
+	object Titan = radar(Titanium);
+	 goto(Titan.position);
+	 build(ExchangePost);
+}
+
+

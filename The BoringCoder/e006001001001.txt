@@ -1,0 +1,15 @@
+extern void object::Move()
+{
+	
+	
+	Square(25);
+	Square(15);
+}
+extern void object::Square(float dist)
+{
+	for(int i = 0; i< 4; i++)
+	{
+		move(dist);
+		turn(90);
+	}
+}

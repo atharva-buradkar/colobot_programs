@@ -1,0 +1,34 @@
+extern void object::Sniff()
+{
+	while(true)
+	{
+		if(flatground(position, 2.5) < 2.5)
+		{
+			// don't sniff
+		}
+		else
+		{
+			int sniff_result = sniff();
+			
+			pendown(Purple, 2);
+			
+			if( sniff_result == 0 )
+			{
+				message("*!key found!*");
+				flag(Green);
+				break;
+			}
+			else
+			{
+				if(topo(position) < 0) // ToDo
+				{
+					turn(90);
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+}

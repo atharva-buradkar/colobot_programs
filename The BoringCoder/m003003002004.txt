@@ -1,0 +1,18 @@
+extern void object::Place_Power_Cell()
+{
+	object powerCell = radar(PowerCell);
+	
+	goto(powerCell.position);
+	
+	grab();
+	
+	object grabber = radar(WingedShooter);
+	
+	goto(grabber.position);
+	
+	drop();
+	
+	move(-10);
+	
+	
+}

@@ -1,0 +1,6 @@
+extern void object::New()
+{
+	object item = radar(UraniumOre);
+	turn(direction(item.position));
+	
+}

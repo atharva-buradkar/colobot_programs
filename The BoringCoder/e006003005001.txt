@@ -1,0 +1,36 @@
+extern void object::remote()
+{
+	for(int i = 0; i < 2; i++)
+	{
+		SendToPost(1, 20);
+		wait(5);
+		SendToPost(2, 90);
+		wait(5);
+	}
+	
+	for(int i = 0; i < 2; i++)
+	{
+		SendToPost(1, 10);
+		wait(5);
+		SendToPost(2, 90); // extra work in second iteration
+		wait(5);
+	}
+	
+	SendToPost(2, 180);
+	wait(5);
+	SendToPost(1, 10);
+	wait(5);
+}
+extern void object::SendToPost(float order_type, float param_value)
+{
+	send("order", order_type, 100);
+	
+	send("param", param_value, 100);
+	
+	while(testinfo("order, 100"))
+	{
+		wait(1);
+		
+	}
+	
+}

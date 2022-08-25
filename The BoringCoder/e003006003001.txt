@@ -1,0 +1,29 @@
+extern void object::Labyrinth()
+{
+	object front, left, right;
+	
+	while(true)
+	{
+		front = radar(Barrier, 0, 45, 0, 5);
+		left = radar(Barrier, 90, 45, 0, 5);
+		right = radar(Barrier, -90, 45, 0, 5);
+		
+		int dist = 5;
+		
+		int angle = 90;
+		
+		if(front == null)
+		{
+			move(dist);
+		}
+		else if (left == null)
+		{
+			turn(90);
+		}
+		else if (right == null)
+		{
+			turn(-90);
+		}
+	}
+	
+}

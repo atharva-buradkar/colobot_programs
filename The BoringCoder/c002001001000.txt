@@ -1,0 +1,16 @@
+extern void object::Radar()
+{
+	
+	while(true)
+	{
+		object waypoint = radar(WayPoint, 0, 360, 0, 27, -1);
+		
+		if(waypoint == null)
+		{
+			break;
+		}
+		
+		goto(waypoint.position);
+	}
+	
+}

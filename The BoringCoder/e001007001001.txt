@@ -1,0 +1,17 @@
+extern void object::Spider2()
+{
+	int i = 0;
+	
+	while(i < sizeof(radarall(AlienSpider)))
+	{
+		
+		object item = radar(AlienSpider);
+		
+		turn(direction(item.position));
+		
+		move(distance(position, item.position)-40);
+		
+		fire(1);
+	}
+	
+}

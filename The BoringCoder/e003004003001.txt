@@ -1,0 +1,21 @@
+extern void object::Info()
+{
+	
+	//Repeat 5 times :
+	//o  Move 20m forward.
+	//o  Read the direction of the next information exchange post.
+	//o  Execute the necessary rotation.
+	
+	int i = 0;
+	
+	int dist = 20;
+	
+	while(i < 5)
+	{
+		move(dist);
+		
+		float dir = receive("Direction");
+		
+		turn(dir);
+	}
+}

@@ -1,0 +1,7 @@
+extern void object::Place_Titanium()
+{
+	
+	object item = radar(Titanium, 0, 360, 0, 1000, -1);
+	 goto(item.position);
+	 build(BotFactory);
+}

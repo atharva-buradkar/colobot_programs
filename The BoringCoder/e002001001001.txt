@@ -1,0 +1,21 @@
+extern void object::Move()
+{
+	//rotate clockwise with motor(1,-1);
+	//o  a 2 seconds burst with fire(2);
+	//o  rotate counter-clockwise with motor(-1,1);
+	//o  a 2 seconds burst.
+	turn(90);
+	
+	while(true)
+	{
+		
+		motor(1, -1);
+		
+		fire(2);
+		
+		motor(-1, 1);
+		
+		fire(2);
+	}
+	
+}

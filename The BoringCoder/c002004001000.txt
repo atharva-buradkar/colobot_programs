@@ -1,0 +1,40 @@
+extern void object::Traps()
+{
+	
+	//Repeat forever:
+	while(true)
+	{
+		//o  Look for a mine
+		object mine = radar(Mine, 0, 180, 0, 5);
+		
+		//o  If a mine has been found, calculate the opposite direction
+		float mine_oppo_dir = 0;
+		if(mine != null)
+		{
+			mine_oppo_dir = direction(mine.position) - 180;
+		}
+		
+		//o  Look for a cross
+		object waypoint = radar(WayPoint);
+		
+		//o  If nothing has been found, stop the program
+		if(waypoint == null)
+		{
+			return;
+		}
+		
+		//o  Calculate the direction of the cross
+		float waypoint_dir = direction(waypoint.position);
+		
+		//o  Calculate the mean value of the two directions
+		float mean_dir = (mine_oppo_dir + waypoint_dir) / 2.0;
+		
+		//o  Set the motor speeds in order to head towards the mean direction
+		turn(mean_dir);
+		goto(waypoint.position);
+		
+		
+		
+		
+	}
+}

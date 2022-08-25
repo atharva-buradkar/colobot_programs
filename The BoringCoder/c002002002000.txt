@@ -1,0 +1,29 @@
+extern void object::Follow()
+{
+	
+	//Repeat forever:
+	//o  Look for the target bot.
+	//o  Calculate the distance to the bot.
+	//o  if the distance to the target bot is less than 5m, move backward.
+	//o  Otherwise, calculate the direction of the target bot, and move towards it
+	
+	
+	while(true)
+	{
+		object target = radar(TargetBot);
+		
+		float dist = distance(position, target.position);
+		
+		if(dist < 5)
+		{
+			move(-5);
+		}
+		else
+		{
+			turn(direction(target.position));
+			move(dist-5);
+		}
+		
+	}
+	
+}

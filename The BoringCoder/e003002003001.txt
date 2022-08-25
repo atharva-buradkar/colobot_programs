@@ -1,0 +1,23 @@
+extern void object::Move()
+{
+	int dist = 20;
+	
+	int deg = 90;
+	
+	move(dist);
+	
+	turn(deg);
+	
+	move(dist);
+	
+	turn(-deg);
+	
+	move(dist);
+	
+	turn(-deg);
+	
+	move(dist);
+	
+	
+	
+}

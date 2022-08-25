@@ -1,0 +1,11 @@
+extern void object::Go()
+{
+	for(int i = 0; i<4 ; i++)
+	{
+		move(10);
+		turn(90);
+		fire(0.1);
+		turn(180);
+	}
+	
+}

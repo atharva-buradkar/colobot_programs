@@ -1,0 +1,31 @@
+extern void object::Defense()
+{
+	
+	//radar to detect your enemies (category AlienAnt)
+	//direction to calculate a direction
+	//distance to calculate a distance
+	//fire to fire your cannon
+	//wait to wait
+	
+	object ant = radar(AlienAnt);
+	
+	while(ant != null)
+	{
+		turn(direction(ant.position));
+		
+		float dist = distance(position, ant.position);
+		
+		if(dist > 40)
+		{
+			wait(1);
+		}
+		else
+		{
+			fire(0.05);
+		}
+		
+		ant = radar(AlienAnt);
+	}
+	
+	
+}

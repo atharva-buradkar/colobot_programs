@@ -1,0 +1,7 @@
+extern void object::New()
+{
+	object item = radar(OrgaMatter);
+	turn(direction(item.position));
+	goto(item.position);
+	
+}

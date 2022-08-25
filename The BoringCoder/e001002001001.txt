@@ -1,0 +1,15 @@
+extern void object::Spider2()
+{
+	grab();
+	
+	drop(Behind);
+	
+	turn(-90);
+	
+	grab();
+	
+	turn(90);
+	
+	drop();
+	
+}

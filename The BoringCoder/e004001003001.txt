@@ -1,0 +1,7 @@
+extern void object::Dragster()
+{
+	
+	motor(1, 1);
+	move(25);
+	
+}

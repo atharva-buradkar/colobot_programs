@@ -1,0 +1,33 @@
+extern void object::Info()
+{
+	
+	//Always repeat:
+	//o  Retrieve the direction from the exchange post.
+	//o  Retrieve the distance from the exchange post.
+	//o  If no information could be retrieved, stop the program.
+	//o  Execute the rotation.
+	//o  Move forward to the next post.
+	
+	
+	float deg;
+	float len;
+	int i = 1;
+	
+	while(true)
+	{
+		deg = receive("Direction");
+		len = receive("Length");
+		
+		if(deg == nan|| len == nan )
+		{
+			break;
+		}
+		
+		turn(deg);
+		
+		move(len);
+		
+		i++;
+	}
+	
+}

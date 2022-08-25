@@ -1,0 +1,23 @@
+extern void object::Titanium1()
+{
+	object titan_ore = radar(TitaniumOre);
+	
+	goto(titan_ore.position);
+	
+	turn(180);
+	
+	grab(Behind);
+	
+	
+	object converter = radar(Converter);
+	
+	goto(converter.position);
+	
+	turn(180);
+	
+	drop(Behind);
+	
+	move(2.5);
+	
+	
+}

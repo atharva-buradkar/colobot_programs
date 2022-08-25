@@ -1,0 +1,28 @@
+extern void object::Digger()
+{
+	for(int y = 0; y < 5; y++)
+	{
+		for(int x = 0; x < 5; x++)
+		{
+			sniff();
+			move(5);
+		}
+		
+		if(y%2 == 0)
+		{
+			sniff();
+			turn(90);
+			move(5);
+			turn(90);
+		}
+		else
+		{
+			sniff();
+			turn(-90);
+			move(5);
+			turn(-90);
+		}
+		
+	}
+	
+}

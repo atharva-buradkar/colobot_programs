@@ -1,0 +1,14 @@
+extern void object::New()
+{
+	
+	object item = radar(Wreck);
+	if(item == null)
+	{
+		message("no wreck");
+	}
+	else
+	{
+		message("there is wreck");
+		turn(direction(item.position));
+	}
+}

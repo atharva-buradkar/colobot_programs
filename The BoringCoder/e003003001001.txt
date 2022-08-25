@@ -1,0 +1,21 @@
+extern void object::Go()
+{
+	
+	int i = 0;
+	
+	while(i < sizeof(radarall(TargetBot)))
+	{
+		move(5);
+		
+		turn(90);
+		
+		fire(0.5);
+		
+		turn(-90);
+		
+		i++;
+	}
+	
+	
+	
+}

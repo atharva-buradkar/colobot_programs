@@ -1,0 +1,16 @@
+extern void object::Power_Research_Center()
+{
+	object power = radar(PowerCell);
+	
+	goto(power.position);
+	
+	grab();
+	
+	object me = radar(Me);
+	
+	goto(me.position);
+	
+	drop();
+	
+	
+}
